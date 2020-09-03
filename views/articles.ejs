@@ -1,0 +1,14 @@
+<%- include('./layout/header') %> 
+<h1>Home Page</h1>
+<%- include('./partials/messages') %> 
+<ul class="list-group">
+    <% articles.forEach(article => {   %> 
+        <a href="/articles/<%= article._id %>"> <li class="list-group-item"> <%= article.title %> </li> </a>
+    <% }) %> 
+</ul>
+
+
+<% if(user) { %> 
+    <p>Add Article <a href="/articles/add">here</a></p>
+<% } %> 
+<%- include('./layout/footer') %> )

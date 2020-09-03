@@ -1,0 +1,12 @@
+<%- include('./layout/header') %> 
+    <h1> <%= article.title %> </h1> 
+    <p>Written by <%= author %></p>
+    <p> <%= article.body %> </p>
+    <hr>
+    <% if(user) { %> 
+        <% if(user.id == article.author) { %> 
+            <a href="/articles/edit/<%= article._id %> " class="btn btn-primary">Edit</a>
+            <a href="#" class="btn btn-danger delete-article" data-id="<%= article._id %>">Delete</a>
+        <% } %> 
+    <% } %> 
+<%- include('./layout/footer') %> 
